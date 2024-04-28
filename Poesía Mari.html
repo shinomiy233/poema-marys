@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poema para Maryyy 🤍</title>
+<style>
+    body {
+        font-family: "Lucida Handwriting", cursive;
+        line-height: 1.5;
+        text-align: center;
+        font-size: 18px; /* Cambio en el tamaño de fuente */
+        background-color: lavender; /* Fondo de página lila */
+    }
+    h1 {
+        text-align: center;
+    }
+    .poesia {
+        font-size: 25px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        margin: 0 auto;
+        width: 50%;
+    }
+    .pregunta {
+        font-size: 20px;
+    }
+    .boton {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+    }
+    .boton-si {
+        background-color: green;
+        color: white;
+    }
+    .boton-no {
+        background-color: red;
+        color: white;
+    }
+    .boton-rosado {
+        background-color: pink;
+        color: black;
+    }
+    .boton-pequeno {
+        font-size: 12px;
+    }
+    .texto-final {
+        font-size: 50px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<h1>Poema para Maryyy (Mariana pe) 🤍</h1>
+<div class="poesia">
+   Quiero que sepas que me gustaría aprender de tu conciencia. Ser yo quien te entienda. Perderme tu silueta y con el tiempo estar en tus grafittis. Si bien yo no sé hacer grafittis, lo intentaré con unos cuántos dibujos. Quiero que me enseñes tus ideas para encontrar tus dilemas. Que si tu café es tan amargo y exacto como lo pretendes te encanta, sea yo quien te lo prepare como se debe. Déjame hacer que te pinte en acuarela a cada una de tus curvas que te asemejan, porqué que eres la niña bonita que deleita a cualquier trovador... 🤍😽
+</div>
+<button class="boton boton-rosado" onclick="mostrarPregunta()">🤍</button>
+<div class="pregunta" style="display: none;">Te gustó?</div>
+<button class="boton boton-si" style="display: none;" onclick="mostrarTextoFinal()">Sí</button>
+<button class="boton boton-no" style="display: none;" onclick="cambiarPregunta()">No</button>
+
+<script>
+    let contadorPreguntas = 0;
+
+    function mostrarPregunta() {
+        document.querySelector('.pregunta').style.display = "block";
+        document.querySelector('.boton-si').style.display = "inline-block";
+        document.querySelector('.boton-no').style.display = "inline-block";
+        document.querySelector('.boton-rosado').style.display = "none"; // Ocultar el botón rosado
+    }
+
+    function cambiarPregunta() {
+        const preguntas = ["¿Segurisima?", "Muy segura?", "Porqué 😢?", "Yaa 😿", "🥺"];
+        if (contadorPreguntas < preguntas.length) {
+            document.querySelector('.pregunta').textContent = preguntas[contadorPreguntas];
+            document.querySelector('.boton-no').style.transform = "scale(0." + (8 - contadorPreguntas) + ")";
+            contadorPreguntas++;
+        }
+    }
+
+    function mostrarTextoFinal() {
+        document.querySelector('.boton-si').style.display = "none"; // Ocultar el botón "Sí"
+        document.querySelector('.boton-no').style.display = "none";
+        document.querySelector('.pregunta').textContent = "A mí también, pero más me gustan tus ojos, tqm 🤍🫶";
+    }
+</script>
+</body>
+</html>
